@@ -3,4 +3,47 @@
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
+
+  /* Neutral exploration theme colors */
+  --color-expedition-dark: #0a0a0a;
+  --color-expedition-base: #171717;
+  --color-expedition-elevated: #262626;
+  --color-expedition-muted: #404040;
+  --color-expedition-text: #fafafa;
+  --color-expedition-text-secondary: #a3a3a3;
+  --color-expedition-accent: #737373;
+  --color-expedition-border: #404040;
+}
+
+/* Disable default scroll behavior for exploration mode */
+html {
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+body {
+  overflow: hidden;
+  background-color: var(--color-expedition-base);
+  color: var(--color-expedition-text);
+}
+
+/* Custom scrollbar for nested content */
+.scrollable-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background: var(--color-expedition-elevated);
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: var(--color-expedition-muted);
+  border-radius: 4px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background: var(--color-expedition-accent);
 }
